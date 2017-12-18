@@ -1,0 +1,43 @@
+{
+    "game": {
+        "id": "7",
+        "title": "Game 7",
+        "grade": "5",
+        "description": "description 7",
+        "dateAdd": "2017-01-22",
+        "whoAdd": {
+            "id": "2",
+            "name": "user2"
+        },
+        "whoHas": [
+            {
+                "id": "2",
+                "name": "user2"
+            }
+        ],
+        "whoSearches": [
+            {
+                "id": "0",
+                "name": "user0"
+            },
+            {
+                "id": "1",
+                "name": "user1"
+            }
+        ],
+        "comments": [
+            {
+                "idUser": "1",
+                "user": "user1",
+                "date": "2017-02-10",
+                "content": "comment 1 game 7"
+            },
+            {
+                "idUser": "0",
+                "user": "user0",
+                "date": "2017-02-19",
+                "content": "comment 0 game 7"
+            }
+        ]
+    }
+}

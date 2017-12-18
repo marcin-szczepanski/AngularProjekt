@@ -1,0 +1,38 @@
+{
+    "game": {
+        "id": "1",
+        "title": "Game One",
+        "grade": "6",
+        "description": "description 1",
+        "dateAdd": "2017-04-30",
+        "whoAdd": {
+            "id": "1",
+            "name": "user1"
+        },
+        "whoHas": [
+            {
+                "id": "0",
+                "name": "user0"
+            },
+            {
+                "id": "1",
+                "name": "user1"
+            }
+        ],
+        "whoSearches": [],
+        "comments": [
+            {
+                "idUser": "1",
+                "user": "user1",
+                "date": "2017-05-10",
+                "content": "comment 1 game 1"
+            },
+            {
+                "idUser": "2",
+                "user": "user2",
+                "date": "2017-07-11",
+                "content": "comment 2 game 2"
+            }
+        ]
+    }
+}

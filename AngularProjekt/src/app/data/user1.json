@@ -1,0 +1,24 @@
+{
+    "user": {
+        "id": "1",
+        "name": "name1",
+        "grade": "5",
+        "dateRegistration": "2016-11-19",
+        "comments": [
+            {
+                "id": "0",
+                "user": "name0",
+                "date": "2017-02-24",
+                "content": "content0"
+            },
+            {
+                "id": "2",
+                "user": "name2",
+                "date": "2017-02-27",
+                "content": "content2"
+            }
+        ],
+        "games": "gamesUser1.json",
+        "searchedGames": "searchedGamesUser1.json"
+    }
+}

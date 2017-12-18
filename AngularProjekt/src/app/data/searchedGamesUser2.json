@@ -1,0 +1,14 @@
+{
+    "searchedGames": [
+        {
+            "id": "4",
+            "title": "Game Four",
+            "grade": "9"
+        },
+        {
+            "id": "5",
+            "title": "Game Five",
+            "grade": "8"
+        }
+    ]
+}

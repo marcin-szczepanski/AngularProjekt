@@ -1,0 +1,39 @@
+{
+    "game": {
+        "id": "6",
+        "title": "Game Six",
+        "grade": "7",
+        "description": "description 6",
+        "dateAdd": "2017-02-11",
+        "whoAdd": {
+            "id": "2",
+            "name": "user2"
+        },
+        "whoHas": [
+            {
+                "id": "2",
+                "name": "user2"
+            }
+        ],
+        "whoSearches": [
+            {
+                "id": "1",
+                "name": "user1"
+            }
+        ],
+        "comments": [
+            {
+                "idUser": "2",
+                "user": "user2",
+                "date": "2017-02-17",
+                "content": "comment 2 game 6"
+            },
+            {
+                "idUser": "1",
+                "user": "user1",
+                "date": "2017-03-14",
+                "content": "comment 1 game 6"
+            }
+        ]
+    }
+}

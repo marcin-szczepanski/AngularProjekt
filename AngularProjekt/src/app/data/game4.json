@@ -1,0 +1,43 @@
+{
+    "game": {
+        "id": "4",
+        "title": "Game Four",
+        "grade": "9",
+        "description": "description 4",
+        "dateAdd": "2017-11-25",
+        "whoAdd": {
+            "id": "1",
+            "name": "user1"
+        },
+        "whoHas": [
+            {
+                "id": "1",
+                "name": "user1"
+            }
+        ],
+        "whoSearches": [
+            {
+                "id": "0",
+                "name": "user0"
+            },
+            {
+                "id": "2",
+                "name": "user2"
+            }
+        ],
+        "comments": [
+            {
+                "idUser": "0",
+                "user": "user0",
+                "date": "2017-12-10",
+                "content": "comment 0 game 4"
+            },
+            {
+                "idUser": "1",
+                "user": "user1",
+                "date": "2017-12-14",
+                "content": "comment 1 game 4"
+            }
+        ]
+    }
+}

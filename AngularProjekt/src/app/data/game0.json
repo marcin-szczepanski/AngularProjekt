@@ -1,0 +1,38 @@
+{
+    "game": {
+        "id": "0",
+        "title": "Game Zero",
+        "grade": "7",
+        "description": "description 0",
+        "dateAdd": "2016-12-30",
+        "whoAdd": {
+            "id": "0",
+            "name": "user0"
+        },
+        "whoHas": [
+            {
+                "id": "0",
+                "name": "user0"
+            },
+            {
+                "id": "2",
+                "name": "user2"
+            }
+        ],
+        "whoSearches": [],
+        "comments": [
+            {
+                "idUser": "0",
+                "user": "user0",
+                "date": "2017-02-14",
+                "content": "comment 0 game 0"
+            },
+            {
+                "idUser": "2",
+                "user": "user2",
+                "date": "2017-02-19",
+                "content": "comment 2 game 0"
+            }
+        ]
+    }
+}

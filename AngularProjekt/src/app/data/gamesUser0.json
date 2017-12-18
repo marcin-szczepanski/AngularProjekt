@@ -1,0 +1,19 @@
+{
+    "games": [
+        {
+            "id": "0",
+            "title": "Game Zero",
+            "grade": "7"
+        },
+        {
+            "id": "1",
+            "title": "Game One",
+            "grade": "6"
+        },
+        {
+            "id": "2",
+            "title": "Game Two",
+            "grade": "5"
+        }
+    ]
+}

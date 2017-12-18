@@ -1,0 +1,43 @@
+{
+    "game": {
+        "id": "3",
+        "title": "Game Three",
+        "grade": "10",
+        "description": "description 3",
+        "dateAdd": "2017-02-10",
+        "whoAdd": {
+            "id": "1",
+            "name": "user1"
+        },
+        "whoHas": [
+            {
+                "id": "1",
+                "name": "user1"
+            },
+            {
+                "id": "2",
+                "name": "user2"
+            }
+        ],
+        "whoSearches": [
+            {
+                "id": "0",
+                "name": "user0"
+            }
+        ],
+        "comments": [
+            {
+                "idUser": "1",
+                "user": "user1",
+                "date": "2017-02-19",
+                "content": "comment 1 game 3"
+            },
+            {
+                "idUser": "2",
+                "user": "user2",
+                "date": "2017-02-25",
+                "content": "comment 2 game 3"
+            }
+        ]
+    }
+}
