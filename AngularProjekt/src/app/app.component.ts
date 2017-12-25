@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  public navigation: string = '/';
+  
+  public changeNavigationHandler(newNavigationValue: string): void {
+    this.navigation = newNavigationValue;
+  }
 }

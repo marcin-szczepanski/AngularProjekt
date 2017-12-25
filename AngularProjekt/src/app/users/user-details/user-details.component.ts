@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { SessionService } from '../../session.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-details',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserDetailsComponent implements OnInit {
 
-  constructor() { }
+  //@Input()
+  public userId: string = "0";
+
+  constructor(private sessionService: SessionService,
+              private router: Router) { }
 
   ngOnInit() {
+    // funkcja do pobierania szczegółów o użytkowniku - Session Service
   }
 
 }

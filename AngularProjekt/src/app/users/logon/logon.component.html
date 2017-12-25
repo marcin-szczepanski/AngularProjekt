@@ -1,0 +1,12 @@
+<h3>Logowanie</h3>
+<form action="/" method="post" #userForm="ngForm" (ngSubmit)="onSubmit(userForm.value)">
+  <label>
+    Nazwa użytkownika:
+    <input type="text" name="username" />
+  </label>
+  <label>
+    Hasło:
+    <input type="password" name="password" />
+  </label>
+  <button>Zaloguj!</button>
+</form>
