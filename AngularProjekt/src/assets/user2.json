@@ -1,5 +1,5 @@
-{
-    "user": {
+[
+    {
         "id": "2",
         "name": "name2",
         "grade": "9",
@@ -21,4 +21,4 @@
         "games": "gamesUser2.json",
         "searchedGames": "searchedGamesUser2.json"
     }
-}
+]

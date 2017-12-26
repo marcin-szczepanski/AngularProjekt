@@ -2,11 +2,11 @@
 <form action="/" method="post" #userForm="ngForm" (ngSubmit)="onSubmit(userForm.value)">
   <label>
     Nazwa użytkownika:
-    <input type="text" name="username" />
+    <input ngModel type="text" id="username" name="username" />
   </label>
   <label>
     Hasło:
-    <input type="password" name="password" />
+    <input ngModel type="password" id="password" name="password" />
   </label>
-  <button>Zaloguj!</button>
+  <button type="submit">Zaloguj!</button>
 </form>

@@ -1,19 +1,17 @@
-{
-    "searchedGames": [
-        {
-            "id": "2",
-            "title": "Game Two",
-            "grade": "5"
-        },
-        {
-            "id": "6",
-            "title": "Game Six",
-            "grade": "7"
-        },
-        {
-            "id": "7",
-            "title": "Game Seven",
-            "grade": "5"
-        }
-    ]
-}
+[
+    {
+        "id": "2",
+        "title": "Game Two",
+        "grade": "5"
+    },
+    {
+        "id": "6",
+        "title": "Game Six",
+        "grade": "7"
+    },
+    {
+        "id": "7",
+        "title": "Game Seven",
+        "grade": "5"
+    }
+]

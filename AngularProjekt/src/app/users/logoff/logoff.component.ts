@@ -11,12 +11,19 @@ export class LogoffComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit() {
+    this.deleteUser();
   }
 
-  // funkcja do usuwania użytkownika z Session Storage
+  ngOnDestroy() {
+    alert('Wylogowano!');
+    this.toMainPage();
+  }
 
-  // funkcja routingu na stronę główną
+  deleteUser() {
+    sessionStorage.removeItem('user');
+  }
 
-  // funkcja przeciwna do ngOnInit() - alert - zostałeś wylogowany...
-
+  toMainPage() {
+    this.router.navigate(['/']);
+  }
 }
