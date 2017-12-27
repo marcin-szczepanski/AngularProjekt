@@ -19,12 +19,12 @@ export class UserDetailsComponent implements OnInit {
   ngOnInit() {
     this.activatedRoute.params.subscribe(params => {
       const id: number = +params['id'];
-      this.getUser(id)
+      this.getUser(id);
       this.me(id);
     })
   }
 
-  me(id: number) {
+  me(id: number): void {
     const logged = JSON.parse(sessionStorage.getItem('User'));
     if (logged) {
       if (logged['id'] == id) {
@@ -37,7 +37,7 @@ export class UserDetailsComponent implements OnInit {
     };
   }
 
-  getUser(id: number) {
+  getUser(id: number): void {
     this.sessionService.getUser(id).subscribe((user: [any]) => {
       this.user = user[0];
       const u = {

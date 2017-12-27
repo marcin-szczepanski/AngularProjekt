@@ -1,19 +1,19 @@
 [
     {
         "id": "2",
-        "name": "name2",
+        "name": "user2",
         "grade": "9",
         "dateRegistration": "2017-01-02",
         "comments": [
             {
                 "id": "0",
-                "user": "name0",
+                "user": "user0",
                 "date": "2017-01-03",
                 "content": "content0"
             },
             {
                 "id": "1",
-                "user": "name1",
+                "user": "user1",
                 "date": "2017-01-14",
                 "content": "content1"
             }

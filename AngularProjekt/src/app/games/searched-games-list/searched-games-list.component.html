@@ -1,4 +1,5 @@
 <ul>
+  <h3>Lista poszukiwanych gier przez użytkownika: {{ userId.name }}</h3>
   <li *ngFor="let game of games">
     <b><i><a routerLink="./{{ game.id }}">{{ game.title }}</a></i></b>
     <p>Ocena: {{ game.grade }}/10</p>

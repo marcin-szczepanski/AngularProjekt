@@ -28,27 +28,31 @@ export class NavigationComponent implements OnInit {
     }
   }*/
 
-  reload() {
+  reload():void {
     this.logged = JSON.parse(sessionStorage.getItem('isLogged'));
     if (!(sessionStorage.getItem('User'))) {
       sessionStorage.setItem('isLogged', 'false');
     }
   }
 
-  goToGamesList() {
+  goToGamesList():void {
     this.navigationChange.emit('games');
   }
 
-  goToUsersList() {
+  goToUsersList():void {
     this.navigationChange.emit('users');
   }
 
-  goToLogon() {
+  goToLogon():void {
     this.navigationChange.emit('logon');
   }
 
-  goToLogoff() {
+  goToLogoff():void {
     this.navigationChange.emit('logoff');
+  }
+
+  goToSearch():void {
+    this.navigationChange.emit('search');
   }
 
 }
