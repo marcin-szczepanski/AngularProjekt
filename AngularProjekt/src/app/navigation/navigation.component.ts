@@ -12,9 +12,27 @@ export class NavigationComponent implements OnInit {
   @Output()
   private navigationChange: EventEmitter<string> = new EventEmitter<string>();
 
-  constructor() { }
+  constructor() {
+    this.reload();
+  }
 
   ngOnInit() {
+    this.reload();
+  }
+
+  /*ngOnChanges(changes: SimpleChanges) {
+    this.logged = JSON.parse(sessionStorage.getItem('isLogged'));
+    const c = changes['logged'];
+    if (c) {
+      this.reload();
+    }
+  }*/
+
+  reload() {
+    this.logged = JSON.parse(sessionStorage.getItem('isLogged'));
+    if (!(sessionStorage.getItem('User'))) {
+      sessionStorage.setItem('isLogged', 'false');
+    }
   }
 
   goToGamesList() {

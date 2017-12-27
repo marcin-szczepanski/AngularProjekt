@@ -5,16 +5,37 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-users-list',
   templateUrl: './users-list.component.html',
-  styleUrls: ['./users-list.component.css']
+  styleUrls: ['./users-list.component.css'],
+  providers: [SessionService]
 })
 export class UsersListComponent implements OnInit {
 
+  public users: Array<any> = [];
+
   constructor(private sessionService: SessionService,
-              private router: Router) { }
+              private router: Router) { this.users = []; }
 
   ngOnInit() {
+    this.users = [];
+    this.getUsers();
   }
 
-  // funkcja do pobierania listy użytkowników - Session Service
+  getUsers(): void {
+    const logged = JSON.parse(sessionStorage.getItem('User'));
+    if (logged) {
+      this.users.push(logged);
+    };
+    this.sessionService.getUsers().subscribe((users: [any]) => {
+      for (let user of users) {
+        if(logged) {
+          if (user['name'] != logged['name']) {
+            this.users.push(user);
+          }
+        } else {
+          this.users.push(user);
+        }
+      }
+    });
+  }
 
 }

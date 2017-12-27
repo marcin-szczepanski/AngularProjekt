@@ -16,11 +16,12 @@ export class LogoffComponent implements OnInit {
 
   ngOnDestroy() {
     alert('Wylogowano!');
-    this.toMainPage();
   }
 
   deleteUser() {
-    sessionStorage.removeItem('user');
+    sessionStorage.removeItem('User');
+    sessionStorage.setItem('isLogged', 'false');
+    this.toMainPage();
   }
 
   toMainPage() {

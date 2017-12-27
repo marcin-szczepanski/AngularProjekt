@@ -25,30 +25,29 @@ export class LogonComponent implements OnInit {
 
   saveUser(user: {id: string, name: string}): void {
     sessionStorage.setItem('User', JSON.stringify(user));
+    sessionStorage.setItem('isLogged', 'true');
     this.goToDetails(user);
   }
 
   searchUser(username: string): void {
-    this.sessionService.searchUser(username);
-    console.log("xD")
-    console.log(this.id)
-    if (this.id !== -1) {
-      const user = {
-        id: this.id.toString(),
-        name: username
-      };
-      this.saveUser(user);
-    }
+    let logged = false;
+    this.sessionService.getUsers().subscribe((users: [any]) => {
+      for (let user of users) {
+        if (user['name'] === username) {
+          this.id = user['id'];
+          logged = true;
+          this.saveUser(user);
+          break;
+        }
+      }
+      if (logged === false) {
+        alert('Nie znaleziono użytkownika!');
+      }
+    });
   }
 
   goToDetails(user: {id: string, name: string}): void {
-    this.router.navigate(['users/' + user.id]);
+    this.router.navigate(['/']);
   }
-
-  // funkcja do sprawdzania czy użytkownik jest w bazie - SearchService
-
-  // funkcja do zapisywania zalogowanego użytkownika do Session Storage
-
-  // funkcja do routingu na szczegóły o użytkowniku
 
 }

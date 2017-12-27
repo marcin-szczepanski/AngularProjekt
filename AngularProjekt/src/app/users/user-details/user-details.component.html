@@ -1,3 +1,33 @@
-<p>
-  user-details works!
-</p>
+<h3 *ngIf="isLogged">
+  To jest Twoje konto!
+</h3>
+<div>
+  <ul>
+    <h3>Użytkownik: {{ user.name }}</h3>
+    <li>Nazwa użytkownika: {{ user.name }}</li>
+    <li>Ocena: {{user.grade}}/10</li>
+    <li>Data rejestracji: {{user.dateRegistration}}</li>
+    <li>
+      Komentarze:
+      <ul>
+        <li *ngFor="let comment of user.comments">
+          <ul>
+            <li>Dodał: {{comment.user}}</li>
+            <li>Data dodania: {{comment.date}}</li>
+            <li>Treść komentarza:
+              <p>{{comment.content}}</p>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a routerLink="./games">Lista gier użytkownika</a>
+      <router-outlet></router-outlet>
+    </li>
+    <li>
+      <a routerLink="./searched-games">Lista poszukiwanych gier przez użytkownika</a>
+      <router-outlet></router-outlet>
+    </li>
+  </ul>
+</div>

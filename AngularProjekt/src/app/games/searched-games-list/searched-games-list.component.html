@@ -1,3 +1,7 @@
-<p>
-  searched-games-list works!
-</p>
+<ul>
+  <li *ngFor="let game of games">
+    <b><i><a routerLink="./{{ game.id }}">{{ game.title }}</a></i></b>
+    <p>Ocena: {{ game.grade }}/10</p>
+    <router-outlet></router-outlet>
+  </li>
+</ul>

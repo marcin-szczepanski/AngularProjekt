@@ -5,20 +5,20 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-searched-games-list',
   templateUrl: './searched-games-list.component.html',
-  styleUrls: ['./searched-games-list.component.css']
+  styleUrls: ['./searched-games-list.component.css'],
+  providers: [GamesService]
 })
 export class SearchedGamesListComponent implements OnInit {
 
-  //@Input()
-  public userId: string = "0";
-
+  public userId: string;
   public games: Array<{id: string, title: string, grade: string}>;
 
   constructor(private gamesService: GamesService,
-              private router: Router) { }
+    private router: Router) { }
 
   ngOnInit() {
-    this.gamesService.getGames(this.userId).subscribe((games: [any]) =>{
+    this.userId = JSON.parse(sessionStorage.getItem('usrID'));
+    this.gamesService.getSearchedGames(this.userId['id']).subscribe((games: [any]) =>{
       this.games = games;
     });
   }

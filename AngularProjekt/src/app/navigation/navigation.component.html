@@ -1,6 +1,5 @@
 <div>
   <a routerLink="/" routerLinkActive="active-link">Strona główna</a>
-  <a routerLink="games" *ngIf="logged" routerLinkActive="active-link">Moje gry</a>
   <a routerLink="users" routerLinkActive="active-link">Użytkownicy</a>
   <a routerLink="logon" *ngIf="!logged" routerLinkActive="active-link">Logowanie</a>
   <a routerLink="logout" *ngIf="logged" routerLinkActive="active-link">Wyloguj</a>

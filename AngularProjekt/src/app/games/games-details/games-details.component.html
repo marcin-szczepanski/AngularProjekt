@@ -1,3 +1,11 @@
-<p>
-  games-details works!
-</p>
+<ul>
+  <h3>Gra: {{game.title}}</h3>
+  <li>Opis: 
+    <p>{{game.description}}</p>
+  </li>
+  <li>Data dodania: {{game.dateAdd}}</li>
+  <li>Dodał: 
+    <a href="../../users/{{game.whoAdd.id}}">{{game.whoAdd.name}}</a>
+  </li>
+  <li><!--uzupełnić--></li>
+</ul>

@@ -1,22 +1,52 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { SessionService } from '../../session.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-user-details',
   templateUrl: './user-details.component.html',
-  styleUrls: ['./user-details.component.css']
+  styleUrls: ['./user-details.component.css'],
+  providers: [SessionService]
 })
 export class UserDetailsComponent implements OnInit {
 
-  //@Input()
-  public userId: string = "0";
+  public user: any;
+  public isLogged: boolean = false;
 
   constructor(private sessionService: SessionService,
-              private router: Router) { }
+              private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
-    // funkcja do pobierania szczegółów o użytkowniku - Session Service
+    this.activatedRoute.params.subscribe(params => {
+      const id: number = +params['id'];
+      this.getUser(id)
+      this.me(id);
+    })
   }
+
+  me(id: number) {
+    const logged = JSON.parse(sessionStorage.getItem('User'));
+    if (logged) {
+      if (logged['id'] == id) {
+        this.isLogged = true;
+      } else {
+        this.isLogged = false;
+      };
+    } else {
+      this.isLogged = false;
+    };
+  }
+
+  getUser(id: number) {
+    this.sessionService.getUser(id).subscribe((user: [any]) => {
+      this.user = user[0];
+      const u = {
+        id: user[0].id,
+        name: user[0].name
+      }
+      sessionStorage.setItem('usrID', JSON.stringify(u));
+    });
+  }
+
 
 }

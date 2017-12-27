@@ -16,17 +16,18 @@ import { LogoffComponent } from './users/logoff/logoff.component';
 
 const routes: Array<Route> = [
   { path: '', pathMatch: 'full', redirectTo: '/' },
-  { path: 'games', component: GamesListComponent, children: [
-    { path: ':id', component: GamesDetailsComponent }
-  ] },
-  { path: 'searched-games', component: SearchedGamesListComponent, children: [
-    { path: ':id', component: GamesDetailsComponent }
-  ] },
   { path: 'users', component: UsersListComponent, children: [
-    { path: ':id', component: UserDetailsComponent }
+    { path: ':id', component: UserDetailsComponent, children: [
+      { path: 'games', component: GamesListComponent, children: [
+        { path: ':id', component: GamesDetailsComponent }
+      ] },
+      { path: 'searched-games', component: SearchedGamesListComponent, children: [
+        { path: ':id', component: GamesDetailsComponent }
+      ] }
+    ] }
   ] },
   { path: 'logon', component: LogonComponent},
-  { path: 'logoff', component: LogoffComponent}
+  { path: 'logout', component: LogoffComponent}
 ];
 
 @NgModule({
