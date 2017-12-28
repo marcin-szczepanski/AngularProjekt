@@ -24,15 +24,16 @@ export class GamesDetailsComponent implements OnInit {
     this.activatedRoute.params.subscribe(params => {
       const id: number = +params['id'];
       this.gameId = id.toString();
-    })
-    this.gamesService.getGame(this.gameId).subscribe((game: [any]) =>{
-      this.game = game[0];
-      if (game[0]['whoSearches'].length === 0) {
-        this.whoSearches = false;
-      } else {
-        this.whoSearches = true;
-      }
+      this.gamesService.getGame(this.gameId).subscribe((game: [any]) =>{
+        this.game = game[0];
+        if (game[0]['whoSearches'].length === 0) {
+          this.whoSearches = false;
+        } else {
+          this.whoSearches = true;
+        }
+      });
     });
+
   }
 
 }
