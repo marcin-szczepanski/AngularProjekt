@@ -12,6 +12,7 @@ export class UserDetailsComponent implements OnInit {
 
   public user: any;
   public isLogged: boolean = false;
+  public empty: boolean = false;
 
   constructor(private sessionService: SessionService,
               private activatedRoute: ActivatedRoute) { }
@@ -39,12 +40,19 @@ export class UserDetailsComponent implements OnInit {
 
   getUser(id: number): void {
     this.sessionService.getUser(id).subscribe((user: [any]) => {
-      this.user = user[0];
-      const u = {
-        id: user[0].id,
-        name: user[0].name
-      }
-      sessionStorage.setItem('usrID', JSON.stringify(u));
+      if (user.length !== 0) {
+        this.user = user[0];
+        const u = {
+          id: user[0].id,
+          name: user[0].name
+        }
+        sessionStorage.setItem('usrID', JSON.stringify(u));
+      };
+      if (this.user.length === 0) {
+        this.empty = true;
+      } else {
+        this.empty = false;
+      };
     });
   }
 

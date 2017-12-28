@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 export class UsersListComponent implements OnInit {
 
   public users: Array<any> = [];
+  public empty: boolean = false;
 
   constructor(private sessionService: SessionService,
               private router: Router) { this.users = []; }
@@ -35,6 +36,11 @@ export class UsersListComponent implements OnInit {
           this.users.push(user);
         }
       }
+      if (this.users.length === 0) {
+        this.empty = true;
+      } else {
+        this.empty = false;
+      };
     });
   }
 

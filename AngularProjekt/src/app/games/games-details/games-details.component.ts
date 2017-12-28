@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { GamesService } from '../../games.service';
 import { ActivatedRoute } from '@angular/router';
 
@@ -10,8 +10,8 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class GamesDetailsComponent implements OnInit {
 
-  //@Input()
   public gameId: string;
+  public whoSearches: boolean = false;
 
   public game: Array<{id: string, title: string, grade: string, description: string,
     dateAdd: string, whoAdd: any, whoHas: Array<{id: string, name: string}>, whoSearches: Array<{id: string, name: string}>,
@@ -27,6 +27,11 @@ export class GamesDetailsComponent implements OnInit {
     })
     this.gamesService.getGame(this.gameId).subscribe((game: [any]) =>{
       this.game = game[0];
+      if (game[0]['whoSearches'].length === 0) {
+        this.whoSearches = false;
+      } else {
+        this.whoSearches = true;
+      }
     });
   }
 

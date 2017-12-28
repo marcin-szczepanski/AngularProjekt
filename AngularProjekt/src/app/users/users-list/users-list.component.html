@@ -1,9 +1,14 @@
-<h3>
-  Lista użytkowników:
-</h3>
-<ul>
-  <li *ngFor="let user of users">
-    <b><i><a routerLink="./{{ user.id }}">{{ user.name }}</a></i></b>
-    <router-outlet></router-outlet>
-  </li>
-</ul>
+<div *ngIf="!empty">
+  <h3>
+    Lista użytkowników:
+  </h3>
+  <ul>
+    <li *ngFor="let user of users">
+      <b><i><a routerLink="./{{ user.id }}">{{ user.name }}</a></i></b>
+    </li>
+  </ul>
+  <router-outlet></router-outlet>
+</div>
+<div *ngIf="empty">
+  Lista użytkowników jest pusta!
+</div>

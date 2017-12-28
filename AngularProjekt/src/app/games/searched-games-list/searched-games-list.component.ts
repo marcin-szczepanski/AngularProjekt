@@ -14,16 +14,17 @@ export class SearchedGamesListComponent implements OnInit {
   public games: Array<{id: string, title: string, grade: string}>;
 
   constructor(private gamesService: GamesService,
-    private router: Router) { }
+    private router: Router) { this.games = []; }
 
   ngOnInit() {
+    this.games = [];
     this.userId = JSON.parse(sessionStorage.getItem('usrID'));
     this.gamesService.getSearchedGames(this.userId['id']).subscribe((games: [any]) =>{
       this.games = games;
     });
   }
 
-  goToDetails(game: {id: string, title: string, grade: string}) {
+  goToDetails(game: {id: string, title: string, grade: string}): void {
     this.router.navigate(['searched-games/' + game.id]);
   }
 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SessionService } from '../../session.service';
 import { Router } from '@angular/router';
+import { window } from 'rxjs/operator/window';
 
 @Component({
   selector: 'app-logon',
@@ -26,7 +27,7 @@ export class LogonComponent implements OnInit {
   saveUser(user: {id: string, name: string}): void {
     sessionStorage.setItem('User', JSON.stringify(user));
     sessionStorage.setItem('isLogged', 'true');
-    this.goToDetails(user);
+    this.goToDetails();
   }
 
   searchUser(username: string): void {
@@ -46,8 +47,8 @@ export class LogonComponent implements OnInit {
     });
   }
 
-  goToDetails(user: {id: string, name: string}): void {
-    this.router.navigate(['/']);
+  goToDetails(): void {
+    location.replace('../');
   }
 
 }

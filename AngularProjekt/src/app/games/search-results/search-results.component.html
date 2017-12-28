@@ -1,0 +1,8 @@
+<ul>
+    <h3>Wyniki wyszukiwania zapytania: {{ query }}</h3>
+    <p *ngIf="empty">Nie znaleziono gier :(</p>
+    <li *ngFor="let game of games">
+      <b><i><a routerLink="./{{ game.id }}">{{ game.title }}</a></i></b>
+      <router-outlet></router-outlet>
+    </li>
+  </ul>

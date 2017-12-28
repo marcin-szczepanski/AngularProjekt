@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-search-games',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchGamesComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
+  }
+
+  onSubmit(value: any): void {
+    let query: string = value.search.trim();
+    query = query.replace(' ', '+');
+    this.goToDetails(query);
+  }
+
+  goToDetails(query: string): void {
+    location.replace('/search/' + query);
   }
 
 }

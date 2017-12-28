@@ -1,8 +1,8 @@
 <ul>
-  <h3>Lista gier użytkownika: {{ userId.name }}</h3>
+  <h3>Lista gier użytkownika: {{ userId?.name }}</h3>
   <li *ngFor="let game of games">
     <b><i><a routerLink="./{{ game.id }}">{{ game.title }}</a></i></b>
     <p>Ocena: {{ game.grade }}/10</p>
-    <router-outlet></router-outlet>
   </li>
 </ul>
+<router-outlet></router-outlet>

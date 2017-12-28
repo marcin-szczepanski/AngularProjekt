@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { window } from 'rxjs/operator/window';
 
 @Component({
   selector: 'app-logoff',
@@ -18,13 +19,13 @@ export class LogoffComponent implements OnInit {
     alert('Wylogowano!');
   }
 
-  deleteUser() {
+  deleteUser(): void {
     sessionStorage.removeItem('User');
     sessionStorage.setItem('isLogged', 'false');
     this.toMainPage();
   }
 
-  toMainPage() {
-    this.router.navigate(['/']);
+  toMainPage(): void {
+    location.replace('../');
   }
 }

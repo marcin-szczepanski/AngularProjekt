@@ -14,16 +14,25 @@ export class GamesListComponent implements OnInit {
   public games: Array<{id: string, title: string, grade: string}>;
 
   constructor(private gamesService: GamesService,
-              private router: Router) { }
+              private router: Router) { this.games = []; }
 
   ngOnInit() {
-    this.userId = JSON.parse(sessionStorage.getItem('usrID'));
+    this.games = [];
+    let myGames = sessionStorage.getItem('myGames');
+
+    if (myGames) {
+      this.userId = JSON.parse(sessionStorage.getItem('User'));
+      sessionStorage.removeItem('myGames');
+    } else {
+      this.userId = JSON.parse(sessionStorage.getItem('usrID'));
+    }
+
     this.gamesService.getGames(this.userId['id']).subscribe((games: [any]) =>{
       this.games = games;
     });
   }
 
-  goToDetails(game: {id: string, title: string, grade: string}) {
+  goToDetails(game: {id: string, title: string, grade: string}): void {
     this.router.navigate(['games/' + game.id]);
   }
 

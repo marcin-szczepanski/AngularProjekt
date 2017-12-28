@@ -1,11 +1,42 @@
 <ul>
-  <h3>Gra: {{game.title}}</h3>
+  <h3>Gra: {{game?.title}}</h3>
   <li>Opis: 
-    <p>{{game.description}}</p>
+    <p>{{game?.description}}</p>
   </li>
-  <li>Data dodania: {{game.dateAdd}}</li>
+  <li>Data dodania: {{game?.dateAdd}}</li>
   <li>Dodał: 
-    <a href="../../users/{{game.whoAdd.id}}">{{game.whoAdd.name}}</a>
+    <a href="../../users/{{game?.whoAdd.id}}">{{game?.whoAdd.name}}</a>
   </li>
-  <li><!--uzupełnić--></li>
+  <li>
+    Mają w posiadaniu:
+      <ul>
+        <li *ngFor="let user of game?.whoHas">
+          <a href="../../users/{{user.id}}">{{user.name}}</a>
+        </li>
+      </ul>
+  </li>
+  <li *ngIf="whoSearches">
+    Poszukują:
+      <ul>
+        <li *ngFor="let user of game?.whoSearches">
+          <a href="../../users/{{user.id}}">{{user.name}}</a>
+        </li>
+      </ul>
+  </li>
+  <li>
+      Komentarze:
+      <ul>
+        <li *ngFor="let comment of game?.comments">
+          <ul>
+            <li>Dodał: 
+              <a href="../../users/{{comment.idUser}}">{{comment.user}}</a>
+            </li>
+            <li>Data dodania: {{comment.date}}</li>
+            <li>Treść komentarza:
+              <p>{{comment.content}}</p>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
 </ul>

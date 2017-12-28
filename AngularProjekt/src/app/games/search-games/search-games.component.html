@@ -1,3 +1,8 @@
-<p>
-  search-games works!
-</p>
+<div>
+  <p>Wpisz tytuł gry i naciśnij przycisk!</p>
+  <form action="/" method="post" #userForm="ngForm" (ngSubmit)="onSubmit(userForm.value)">
+    <input ngModel type="text" id="search" name="search" placeholder="Podaj nazwę gry!"/>
+    <button type="submit">Wyszukaj!</button>
+  </form>
+  <router-outlet></router-outlet>
+</div>
