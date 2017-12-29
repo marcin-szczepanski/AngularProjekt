@@ -5,13 +5,13 @@
   </li>
   <li>Data dodania: {{game?.dateAdd}}</li>
   <li>Dodał: 
-    <a href="../../users/{{game?.whoAdd.id}}">{{game?.whoAdd.name}}</a>
+    <a routerLink="../../../../users/{{game?.whoAdd.id}}">{{game?.whoAdd.name}}</a>
   </li>
   <li>
     Mają w posiadaniu:
       <ul>
         <li *ngFor="let user of game?.whoHas">
-          <a href="../../users/{{user.id}}">{{user.name}}</a>
+          <a routerLink="../../../../users/{{user.id}}">{{user.name}}</a>
         </li>
       </ul>
   </li>
@@ -19,7 +19,7 @@
     Poszukują:
       <ul>
         <li *ngFor="let user of game?.whoSearches">
-          <a href="../../users/{{user.id}}">{{user.name}}</a>
+          <a routerLink="../../../../users/{{user.id}}">{{user.name}}</a>
         </li>
       </ul>
   </li>
@@ -29,7 +29,7 @@
         <li *ngFor="let comment of game?.comments">
           <ul>
             <li>Dodał: 
-              <a href="../../users/{{comment.idUser}}">{{comment.user}}</a>
+              <a routerLink="../../../../users/{{comment.idUser}}">{{comment.user}}</a>
             </li>
             <li>Data dodania: {{comment.date}}</li>
             <li>Treść komentarza:

@@ -14,7 +14,7 @@ export class SearchedGamesListComponent implements OnInit {
   public games: Array<{id: string, title: string, grade: string}>;
 
   constructor(private gamesService: GamesService,
-    private router: Router) { this.games = []; }
+              private router: Router) { this.games = []; }
 
   ngOnInit() {
     this.games = [];

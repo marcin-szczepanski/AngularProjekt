@@ -23,14 +23,14 @@ export class SearchResultsComponent implements OnInit {
     this.activatedRoute.params.subscribe(params => {
       const query: string = params['query'];
       this.query = query.replace('+', ' ');
-    });
-    this.gamesService.search(this.query).subscribe((games: [any]) =>{
-      this.games = games;
-      if (games.length === 0) {
-        this.empty = true;
-      } else {
-        this.empty = false;
-      }
+      this.gamesService.search(this.query).subscribe((games: [any]) =>{
+        this.games = games;
+        if (games.length === 0) {
+          this.empty = true;
+        } else {
+          this.empty = false;
+        }
+      });
     });
   }
 

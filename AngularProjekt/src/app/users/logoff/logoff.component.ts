@@ -15,10 +15,6 @@ export class LogoffComponent implements OnInit {
     this.deleteUser();
   }
 
-  ngOnDestroy() {
-    alert('Wylogowano!');
-  }
-
   deleteUser(): void {
     sessionStorage.removeItem('User');
     sessionStorage.setItem('isLogged', 'false');

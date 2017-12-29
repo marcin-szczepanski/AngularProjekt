@@ -1,7 +1,7 @@
 <div>
   <p *ngIf="logged">Witaj, {{name}}!</p>
   <a routerLink="/" routerLinkActive="active-link">Strona główna</a>
-  <a (click)="myGames()" routerLink="users/{{id}}" *ngIf="logged" routerLinkActive="active-link">Twoje konto</a>
+  <a routerLink="users/{{id}}" *ngIf="logged" routerLinkActive="active-link">Twoje konto</a>
   <a routerLink="search" routerLinkActive="active-link">Szukaj gier</a>
   <a routerLink="users" routerLinkActive="active-link">Użytkownicy</a>
   <a routerLink="logon" *ngIf="!logged" routerLinkActive="active-link">Logowanie</a>

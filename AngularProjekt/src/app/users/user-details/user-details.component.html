@@ -14,7 +14,7 @@
           <li *ngFor="let comment of user?.comments">
             <ul>
               <li>Dodał: 
-                <a href="./users/{{comment.id}}">{{comment.user}}</a>
+                <a routerLink="../../users/{{comment.id}}">{{comment.user}}</a>
               </li>
               <li>Data dodania: {{comment.date}}</li>
               <li>Treść komentarza:

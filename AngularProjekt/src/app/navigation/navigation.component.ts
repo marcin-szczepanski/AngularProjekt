@@ -33,10 +33,6 @@ export class NavigationComponent implements OnInit {
     }
   }
 
-  myGames(): void {
-    sessionStorage.setItem('myGames', 'true');
-  }
-
   me(): string {
     const logged = JSON.parse(sessionStorage.getItem('User'));
     return logged;

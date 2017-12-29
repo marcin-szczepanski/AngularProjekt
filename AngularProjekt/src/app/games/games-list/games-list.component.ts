@@ -18,15 +18,7 @@ export class GamesListComponent implements OnInit {
 
   ngOnInit() {
     this.games = [];
-    let myGames = sessionStorage.getItem('myGames');
-
-    if (myGames) {
-      this.userId = JSON.parse(sessionStorage.getItem('User'));
-      sessionStorage.removeItem('myGames');
-    } else {
-      this.userId = JSON.parse(sessionStorage.getItem('usrID'));
-    }
-
+    this.userId = JSON.parse(sessionStorage.getItem('usrID'));
     this.gamesService.getGames(this.userId['id']).subscribe((games: [any]) =>{
       this.games = games;
     });

@@ -20,7 +20,7 @@ export class SearchGamesComponent implements OnInit {
   }
 
   goToDetails(query: string): void {
-    location.replace('/search/' + query);
+    this.router.navigate(['search/' + query]);
   }
 
 }
